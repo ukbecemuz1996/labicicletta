@@ -22,13 +22,13 @@
                         </div>
                     </div>
                 </div>
-                <h2>Shop - Website Cart Limit</h2>
+                <h2>Shop - Website Cart Minimum Total Amount</h2>
                 <div class="row mt16 o_settings_container" id="website_cart_limit">
                     <div class="col-6 o_setting_box" id="website_website_cart_limit_setting">
                         <div class="o_setting_right_pane">
-                            <label for="website_sale_cart_limit" string="Website Cart Limit"/>
+                            <label for="website_sale_cart_limit" string="Website Cart Minimum Total Amount"/>
                             <div class="text-muted">
-                                Website Cart Limit
+                                Website Cart Minimum Total Amount
                             </div>
                             <div class="content-group">
                                 <div class="row mt16 ms-4">

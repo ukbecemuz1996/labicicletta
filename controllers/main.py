@@ -14,7 +14,7 @@ class WebsiteSale(main.WebsiteSale):
             cart_limit = request.env['ir.config_parameter'].sudo(
             ).get_param('labicicletta.website_sale_cart_limit')
             if cart_limit:
-                if int(order.amount_total) <= int(cart_limit):
+                if float(order.amount_total) <= float(cart_limit):
                     return request.redirect_query('/shop/cart', {'cart_limit_msg': 'exceeded', 'cart_limit': cart_limit})
         return res
 
@@ -27,7 +27,7 @@ class WebsiteSale(main.WebsiteSale):
             cart_limit = request.env['ir.config_parameter'].sudo(
             ).get_param('labicicletta.website_sale_cart_limit')
             if cart_limit:
-                if int(order.amount_total) <= int(cart_limit):
+                if float(order.amount_total) <= float(cart_limit):
                     return request.redirect_query('/shop/cart', {'cart_limit_msg': 'exceeded', 'cart_limit': cart_limit})
         return res
 
@@ -43,7 +43,7 @@ class WebsiteSale(main.WebsiteSale):
             cart_limit = request.env['ir.config_parameter'].sudo(
             ).get_param('labicicletta.website_sale_cart_limit')
             if cart_limit:
-                if int(order.amount_total) <= int(cart_limit):
+                if float(order.amount_total) <= float(cart_limit):
                     return request.redirect_query('/shop/cart', {'cart_limit_msg': 'exceeded', 'cart_limit': cart_limit})
         return res
 
@@ -56,7 +56,7 @@ class WebsiteSale(main.WebsiteSale):
             cart_limit = request.env['ir.config_parameter'].sudo(
             ).get_param('labicicletta.website_sale_cart_limit')
             if cart_limit:
-                if int(order.amount_total) <= int(cart_limit):
+                if float(order.amount_total) <= float(cart_limit):
                     return request.redirect_query('/shop/cart', {'cart_limit_msg': 'exceeded', 'cart_limit': cart_limit})
         return res
 
@@ -69,6 +69,6 @@ class WebsiteSale(main.WebsiteSale):
             cart_limit = request.env['ir.config_parameter'].sudo(
             ).get_param('labicicletta.website_sale_cart_limit')
             if cart_limit:
-                if int(order.amount_total) <= int(cart_limit):
+                if float(order.amount_total) <= float(cart_limit):
                     return request.redirect_query('/shop/cart', {'cart_limit_msg': 'exceeded', 'cart_limit': cart_limit})
         return res
