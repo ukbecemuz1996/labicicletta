@@ -1,6 +1,6 @@
 
 from odoo import api, fields, models, tools, SUPERUSER_ID, _
-
+from odoo.http import request
 class Website(models.Model):
     _inherit = 'website'
 
@@ -11,3 +11,6 @@ class Website(models.Model):
             if discount_code:
                 sale_order_sudo._try_apply_code(discount_code)
         return sale_order_sudo
+    
+    def get_cart_sale_order_id(self) :
+        return super().sale_get_order()

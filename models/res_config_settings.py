@@ -8,3 +8,4 @@ class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     website_sale_whole_discount_code = fields.Char(string="Website Discount Code", readonly=False,config_parameter='labicicletta.website_sale_whole_discount_code')
+    website_sale_cart_limit = fields.Integer(string="Website Cart Limit", readonly=False,config_parameter='labicicletta.website_sale_cart_limit')
