@@ -209,6 +209,6 @@ class WebsiteSale(main.WebsiteSale):
             website_start_working_hour) and float(current_time) <= float(website_end_working_hour)
 
         if not current_time_is_between:
-            return request.redirect('/?working_hours=outside')
+            return request.redirect('/?working_hours=outside&now='+now+'&current_time='+current_time)
 
         return res
