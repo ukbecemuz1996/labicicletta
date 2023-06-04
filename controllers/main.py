@@ -4,7 +4,7 @@ from odoo import fields, http, SUPERUSER_ID, tools, _
 from datetime import datetime
 from odoo.addons.website.models.ir_http import sitemap_qs2dom
 from odoo.addons.http_routing.models.ir_http import slug
-
+import pytz
 
 class WebsiteSale(main.WebsiteSale):
     def sitemap_shop(env, rule, qs):
@@ -29,7 +29,7 @@ class WebsiteSale(main.WebsiteSale):
         website_end_working_hour = request.env['ir.config_parameter'].sudo(
         ).get_param('labicicletta.website_end_working_hour')
 
-        now = datetime.now().time()
+        now = datetime.now(tz=pytz.timezone('Asia/Kuwait')).time()
         current_time = now.hour+now.minute/60.0
 
         current_time_is_between = float(current_time) >= float(
@@ -58,7 +58,7 @@ class WebsiteSale(main.WebsiteSale):
         website_end_working_hour = request.env['ir.config_parameter'].sudo(
         ).get_param('labicicletta.website_end_working_hour')
 
-        now = datetime.now().time()
+        now = datetime.now(tz=pytz.timezone('Asia/Kuwait')).time()
         current_time = now.hour+now.minute/60.0
 
         current_time_is_between = float(current_time) >= float(
@@ -90,7 +90,7 @@ class WebsiteSale(main.WebsiteSale):
         website_end_working_hour = request.env['ir.config_parameter'].sudo(
         ).get_param('labicicletta.website_end_working_hour')
 
-        now = datetime.now().time()
+        now = datetime.now(tz=pytz.timezone('Asia/Kuwait')).time()
         current_time = now.hour+now.minute/60.0
 
         current_time_is_between = float(current_time) >= float(
@@ -119,7 +119,7 @@ class WebsiteSale(main.WebsiteSale):
         website_end_working_hour = request.env['ir.config_parameter'].sudo(
         ).get_param('labicicletta.website_end_working_hour')
 
-        now = datetime.now().time()
+        now = datetime.now(tz=pytz.timezone('Asia/Kuwait')).time()
         current_time = now.hour+now.minute/60.0
 
         current_time_is_between = float(current_time) >= float(
@@ -148,7 +148,7 @@ class WebsiteSale(main.WebsiteSale):
         website_end_working_hour = request.env['ir.config_parameter'].sudo(
         ).get_param('labicicletta.website_end_working_hour')
 
-        now = datetime.now().time()
+        now = datetime.now(tz=pytz.timezone('Asia/Kuwait')).time()
         current_time = now.hour+now.minute/60.0
 
         current_time_is_between = float(current_time) >= float(
@@ -177,7 +177,7 @@ class WebsiteSale(main.WebsiteSale):
         website_end_working_hour = request.env['ir.config_parameter'].sudo(
         ).get_param('labicicletta.website_end_working_hour')
 
-        now = datetime.now().time()
+        now = datetime.now(tz=pytz.timezone('Asia/Kuwait')).time()
         current_time = now.hour+now.minute/60.0
 
         current_time_is_between = float(current_time) >= float(
@@ -202,13 +202,13 @@ class WebsiteSale(main.WebsiteSale):
         website_end_working_hour = request.env['ir.config_parameter'].sudo(
         ).get_param('labicicletta.website_end_working_hour')
 
-        now = datetime.now().time()
+        now = datetime.now(tz=pytz.timezone('Asia/Kuwait')).time()
         current_time = now.hour+now.minute/60.0
 
         current_time_is_between = float(current_time) >= float(
             website_start_working_hour) and float(current_time) <= float(website_end_working_hour)
 
         if not current_time_is_between:
-            return request.redirect('/?working_hours=outside&now='+str(now)+'&current_time='+str(current_time))
+            return request.redirect('/?working_hours=outside')
 
         return res
